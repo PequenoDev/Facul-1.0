@@ -1,2 +1,2 @@
 # Facul-1.0
- Repositorio com atividades da faculdade
+ Repositório com atividades da faculdade.
