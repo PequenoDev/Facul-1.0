@@ -4,23 +4,18 @@
 //Imprima o vetor N.
 
 #include <stdio.h>
+int main()
+{
+    int n[1000], valor, i,x;
 
-int main() {
-  int n[1000], i;
-  int valor, aux;
+    scanf ("%d", &valor);
 
-    scanf("%d", &valor);
-    aux=0;
-    while(aux<999){
-      for(i=0; i<valor; i++) {
-        n[i]=i; 
-        aux++; 
-      }
-    } 
-
-    for(i=0; i<1000; i++) {
-      printf("N[%d] = %d\n",i,n[i]);
+    for(i=0,x=0; i<1000; i++)
+    {
+        printf("N[%d] = %d\n",i,x);
+        x++;
+        if(x==valor)
+            x=0;
     }
-       
-  return 0;
+    return 0;
 }
