@@ -13,6 +13,7 @@ opção desejada e imprime o valor total das prestações (se houverem).
 #include <locale.h>
 
 void valor_a_pagar(int op, float valor) {
+  int parcelas;
 
   switch (op)
   {
@@ -25,7 +26,14 @@ void valor_a_pagar(int op, float valor) {
     break;
 
   case 3:
-    break;  
+    if(valor>100){
+      printf("Escolha o número de parcelas:");
+      scanf("%d", &parcelas);
+      printf("O valor a ser pago é %dx R$ %.2f (Valor final R$ %.2f)\n", parcelas, (valor/parcelas)+(valor*0.03), (valor*0.03*parcelas)+valor);
+    }else{
+      break;
+    }
+    break; 
   
   }
 }
@@ -53,7 +61,7 @@ int valor_da_compra() {
 }
 
 int main() {
-  setlocale(LC_ALL, "Portuguese");
+  setlocale(LC_ALL, "");
 
   valor_da_compra();
   
