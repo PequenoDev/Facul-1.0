@@ -18,7 +18,6 @@ int potenciacao(int base, int expoente) {
 int main() {
   setlocale(LC_ALL, "");
   int base, expoente;
-  int potencia;
 
   printf("Digite a base e seu expoente para calcular a potência:\n");
   scanf("%d %d", &base, &expoente);
