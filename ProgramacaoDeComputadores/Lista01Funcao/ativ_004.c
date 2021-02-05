@@ -7,11 +7,14 @@
 #include <math.h>
 
 int potenciacao(int base, int expoente) {
-  int potencia;
+  int potencia, i;
+  
+  potencia=1;
+  for(i=0; i<expoente; i++) {
+    potencia=potencia*base;
+  }
 
-  potencia = pow(base,expoente);
-
-  printf("O valor obtido pele potenciação é %d.", potencia);
+  printf("O resultado de %d elevado a %d é %d", base, expoente, potencia);
 
 }
 

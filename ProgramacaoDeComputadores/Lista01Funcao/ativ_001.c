@@ -5,6 +5,7 @@
 #include <locale.h>
 
 int menor() {
+  setlocale(LC_ALL, "");
   int a, b;
 
   scanf("%d %d", &a,&b);

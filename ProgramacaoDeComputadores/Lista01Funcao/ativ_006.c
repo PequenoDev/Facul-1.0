@@ -6,31 +6,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include <math.h>
+#include <stdbool.h>
 
-int inteiro(n) {
-  int i, x;
+bool inteiro(float valor) {
 
-  for(i=0; i<n; i++) {
-    printf("Digite o valor desejado: ");
-    scanf("%d", &x);
+  if((valor>=0) && (valor==(int)valor)) {
+    return true;
+  }else{
+    return false;
+  }
+}
 
-    if(x>0 && x-(int)x==0) {
-      printf("O valor é inteiro e positivo");
-    }else{
-      printf("Deu merda");
+float soma_divisores(float num) {
+  int i, soma=0;
+
+  if(inteiro(num)==false) {
+    printf("O valor não é inteiro e positivo.");
+  }else {
+    for(i=(int)num-1; i>=1; i--) {
+      if((int)num%i==0) {
+        soma=soma+i;
+      }
     }
   }
+  return soma;
 }
 
 int main() {
   setlocale(LC_ALL, "");
-  int n;
+  float num, i, res;
 
-  printf("Informe quantos números você deseja calcular: ");
-  scanf("%d", &n);
-
-  inteiro(n);
+  do {
+    printf("Informe um valor, ou -1 para sair \n");
+    scanf("%f", &num);
+    res=soma_divisores(num);
+    printf("A soma dos divisores: %f", res);
+  }while (num!=-1);
 
   return 0;
 }
