@@ -12,3 +12,35 @@ Por exemplo, se o rastro de histórico é "RWWRRR" e o número de processos é 3
 número mínimo de ciclos de máquina será 4: um para a primeira leitura, um para cada uma 
 das gravações e apenas um para todo o último grupo de leituras.
 */
+
+#include <stdio.h>
+
+int main() {
+
+  int J,O,S,E;
+  char lin[50];
+
+    while(scanf("%[^\n]%*c", &lin)!=EOF) {
+      scanf("%d%*c", &J);
+      O=S=0;
+        for(E=0; lin[E]!='\0'; E++) {
+          if(lin[E]=='W') {
+            S++;
+              if(O>0) {
+                O=0;
+                S++;
+              }
+          } else {
+            O++;
+              if(O==J) {
+                S++;
+                O=0;
+              }
+          }
+        }
+
+        if(O>0) S++;
+        printf("%d\n", S);
+    }
+  return 0;
+}

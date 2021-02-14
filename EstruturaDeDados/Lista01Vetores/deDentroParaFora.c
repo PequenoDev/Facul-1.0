@@ -16,3 +16,32 @@ Da mesma foma, a linha " MANGOS " está sendo impressa incorretamente como "NAM 
 tarefa é desembaralhar (decifrar) a string a partir da forma como ela foi impressa para a 
 sua forma original. Você pode assumir que cada linha conterá um número par de caracteres.
 */
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+
+  int J,O,S,E,aux;
+  char bagun[50], arrum[50];
+
+    scanf("%d", &J);
+    getchar();
+
+    for(O=0; O<J; O++) {
+      fgets(bagun, 50, stdin);
+
+      E=strlen(bagun)-1;
+      aux=E/2+E%2;
+
+      for(S=aux-1; S>=0; S--)
+        arrum[aux-S-1]=bagun[S];
+
+      for(S=E-1; S>=aux; S--)
+        arrum[E-S-1+aux]=bagun[S];
+
+      arrum[E]='\0';
+      puts(arrum);
+    }
+  return 0;
+}
