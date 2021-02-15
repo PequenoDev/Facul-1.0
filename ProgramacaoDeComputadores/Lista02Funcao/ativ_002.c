@@ -1,0 +1,1 @@
+//2- Implemente a função strcmp (char *str1, char *str2) usando ponteiros.

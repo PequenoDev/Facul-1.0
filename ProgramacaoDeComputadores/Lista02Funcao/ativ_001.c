@@ -1,0 +1,1 @@
+//1- Implemente a função strcpy (char *destino, char *origem) usando ponteiros.
