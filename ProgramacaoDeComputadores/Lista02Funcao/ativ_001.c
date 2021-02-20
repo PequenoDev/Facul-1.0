@@ -3,17 +3,25 @@
 #include <stdio.h>
 #include <string.h>
 
-void strcopy(char *str2, char *str1) {
-  
+void strcopy(char *str2, char *str1) 
+{
+  while(*str1)
+  {
+    *str2=*str1;
+    str1++;
+    str2++;
+  }   
+  *str2='\0';
 }
 
-int main() {
+int main() 
+{
   char str1[50], str2[50];
  
-  scanf("%s%s", str1, str2);
-  getchar();
-  printf("%s\n%s", str1, str2);
+  gets(str1);
 
-  strcopy(str1,str2);
+  strcopy(str2,str1);
+
+  printf("A string foi %s", str2);
   return 0;
 }
